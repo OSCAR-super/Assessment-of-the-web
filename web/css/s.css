@@ -1,0 +1,64 @@
+body{
+    background-color: seashell;
+}
+
+
+
+.Name,.Number,.Taskname,.file{
+    margin:65px 30%;
+}
+
+span{
+    color:rgb(118,118,118);
+    font-size:18px
+}
+
+.name{
+    font-size:25px;
+    color:#398bcf;
+}
+
+#id,#name{
+    height:50px;
+    width:350px;
+    font-size: 20px;
+    border-radius: 15px;
+    border:2px solid #2267ce;
+}
+
+
+.tj{
+    font-size: 25px;
+    color:#398bcf;
+    background-color: seashell;
+    border-radius: 15px;
+    height:40px;
+    cursor: pointer;
+    margin-right: 15px;
+}
+
+
+.back{
+    font-size: 25px;
+    color:#398bcf;
+    background-color: seashell;
+    border-radius: 15px;
+    height:40px;
+    cursor: pointer;
+    margin-left: 15px;
+}
+
+.post{
+    width:700px;
+    height:200px;
+    border:2px dashed #2267ce;
+    border-radius: 15px;
+    background:url(../image/post.png) no-repeat  center center;
+}
+
+#khname{
+    height:50px;
+    width:350px;
+    font-size: 20px;
+    border:2px solid #2267ce;
+}

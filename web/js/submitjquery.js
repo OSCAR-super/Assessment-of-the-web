@@ -1,0 +1,35 @@
+$(function(){
+   $("#mz").blur(function(){
+     $.ajax({
+        type:"POST",
+        url:"",
+        data:{mz:$("input[name='mz']").val()},
+        dataType:'json',
+        async:false
+     });
+   });
+});
+
+$(function(){
+    $("#xh").blur(function(){
+      $.ajax({
+         type:"POST",
+         url:"",
+         data:{xh:$("input[name='xh']").val()},
+         dataType:'json',
+         async:false
+      });
+    });
+ });
+
+ $(function(){
+    $("#khm").blur(function(){
+      $.ajax({
+         type:"POST",
+         url:"",
+         data:{khm:$("input[name='khm']").val()},
+         dataType:'json',
+         async:false
+      });
+    });
+ });

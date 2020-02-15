@@ -1,0 +1,27 @@
+body{
+    background-color: seashell;
+}
+
+.btn{
+    font-size: 23px;
+    height:40px;
+    border-radius: 6px;
+    border:2px solid #4ea1e6;
+    background-color: seashell;
+}
+
+.t{
+    width: 60%;
+    margin-left: 35%;
+}
+
+label{
+    font-size: 26px;
+}
+
+.task{
+    font-size: 25px;
+    margin-left: 15px;
+    border:1px solid #4ea1e6;
+}
+
