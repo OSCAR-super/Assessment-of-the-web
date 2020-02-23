@@ -41,14 +41,14 @@
     </div>
     <br><br>
     <input type="submit" class="btn" style="margin-left: 45%;" value="确认修改"/>
+    <a class="search" href="${pageContext.request.contextPath}/fServlet?kaohename=${kaohe.id}">进入批改</a>
     <div >
-    <input type="hidden" name="id" value="${kaohe.id}">
+        <input type="hidden" name="id" value="${kaohe.id}">
     </div>
 
 </form>
 <div >
 
-    <a class="search" href="${pageContext.request.contextPath}/fServlet?kaohename=${kaohe.id}">进入批改</a>
 </div>
 
 

@@ -4,7 +4,7 @@ import Tools.JDBCUtils;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import pojo.Students;
-import pojo.Students;
+
 import pojo.User;
 import pojo.kaohe;
 

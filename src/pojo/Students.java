@@ -69,4 +69,17 @@ public class Students {
     public void setFile(String file) {
         this.file = file;
     }
+
+    @Override
+    public String toString() {
+        return "Students{" +
+                "sname=" + sname +
+                ", sid=" + sid +
+                ", stime=" + stime +
+                ", teacher=" + teacher +
+                ", gai=" + gai +
+                ", kaohename=" + kaohename +
+                ", file=" + file +
+                '}';
+    }
 }

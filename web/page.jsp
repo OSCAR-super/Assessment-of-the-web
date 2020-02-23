@@ -57,6 +57,7 @@
                 <th width="120px">提交时间</th>
                 <th width="100px">批改人</th>
                 <th width="100px">文件</th>
+                <th width="100px">在线预览</th>
                 <th width="100px">标记</th>
                 <th width="100px">批改</th>
 
@@ -72,52 +73,19 @@
                 <td>${students.stime}</td>
                 <td>${students.teacher}</td>
                 <td><a class="search" href="${pageContext.request.contextPath}/downServlet?filename=${students.file}">${students.file}</a></td>
-
+                <td><a class="search" href="${pageContext.request.contextPath}/viewServlet?filename=${students.file}">${students.file}</a></td>
                 <td>
                         ${students.gai}
 
                 </td>
+
                 <td><a class="search" href="${pageContext.request.contextPath}/updateStudentServlet?sid=${students.sid}&&gai=审核中&&kaohename=${students.kaohename}">审核中</a><a class="search" href="${pageContext.request.contextPath}/updateStudentServlet?sid=${students.sid}&&gai=通过&&kaohename=${students.kaohename}">通过</a><a class="search" href="${pageContext.request.contextPath}/updateStudentServlet?sid=${students.sid}&&gai=未通过&&kaohename=${students.kaohename}">未通过</a></td>
             </tr>
 
             </c:forEach>
             </tbody>
         </table>
-        <div>
-            <nav aria-label="Page navigation">
-                <ul class="pagination">
-                    <c:if test="${pbs.currentPage==1}">
-                    <li class="disabled">
-                        </c:if>
-                        <c:if test="${pbs.currentPage!=1}">
-                    <li>
-                        </c:if>
-                        <a href="${pageContext.request.contextPath}/FindStudentByConditionServlet?currentPage=${pbs.currentPage-1}&rows=5&sid=${condition.sid[0]}&sname=${condition.sname[0]}&gai=${condition.gai[0]}"aria-label="Previous" ;>
-                            <span aria-hidden="true">&laquo;</span>
-                        </a>
-                    </li>
-                    <c:forEach begin="1" end="${pbs.totalPage}" var="i">
-                        <c:if test="${pbs.currentPage==i}">
-                            <li class="disabled"><a href="${pageContext.request.contextPath}/FindStudentByConditionServlet?currentPage=${i}"&rows=5&sid=${condition.sid[0]}&sname=${condition.sname[0]}&gai=${condition.gai[0]}";>${i}</a> </li>
-                        </c:if>
-                        <c:if test="${pbs.currentPage!=i}">
-                            <li><a href="${pageContext.request.contextPath}/FindStudentByConditionServlet?currentPage=${i}"&rows=5&sid=${condition.sid[0]}&sname=${condition.sname[0]}&gai=${condition.gai[0]}";>${i}</a> </li>
-                        </c:if>
 
-                    </c:forEach>
-                    <li>
-                        <a href="${pageContext.request.contextPath}/FindStudentByConditionServlet?currentPage=${pbs.currentPage+1}&rows=5&sid=${condition.sid[0]}&sname=${condition.sname[0]}&gai=${condition.gai[0]}"aria-label="Previous" ;>
-                            <span aria-hidden="true">&raquo;</span>
-                        </a>
-                    </li>
-                    <span style="">
-                    共${pbs.totalCount}条记录，共${pbs.totalPage}页
-                </span>
-
-
-                </ul>
-            </nav>
-        </div>
         <br><br>
         <input type="submit" id="remove"  value="删除选中">
     </div>

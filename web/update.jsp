@@ -41,7 +41,7 @@
         <div class="form-group" style="text-align: center">
             <input class="btn" type="submit" value="提交" />
             <input class="btn" type="reset" value="重置" />
-            <input class="btn" type="button" value="返回"/>
+            <input class="btn" type="button" value="返回" onclick="back()"/>
         </div>
     </form>
 </div>

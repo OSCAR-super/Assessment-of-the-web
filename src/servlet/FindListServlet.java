@@ -47,7 +47,7 @@ public class FindListServlet extends HttpServlet {
         pb2.setCurrentPage(Integer.parseInt(currentPage));
         request.setAttribute("pb2",pb2);
         request.setAttribute("condition",map);
-        request.getRequestDispatcher("/list.jsp?").forward(request,response);
+        request.getRequestDispatcher("/list.jsp").forward(request,response);
 
     }
 

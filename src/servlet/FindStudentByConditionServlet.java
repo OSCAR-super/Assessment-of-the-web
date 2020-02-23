@@ -32,7 +32,7 @@ public class FindStudentByConditionServlet extends HttpServlet {
             currentPage="1";
         }
         if (rows==null||rows.equals("")){
-            rows="5";
+            rows="100";
         }
 
         Map<String,String[]> map=request.getParameterMap();
