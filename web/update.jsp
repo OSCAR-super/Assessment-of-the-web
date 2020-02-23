@@ -17,8 +17,13 @@
     <link href="css/a.css" rel="stylesheet"  type="text/css" />
     <script src="js/jquery-2.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-
+    <script>
+        function back(){
+            window.history.go(-1);
+        }
+    </script>
 </head>
+
 <body>
 <div class="container">
     <center><h3>修改管理员</h3></center>

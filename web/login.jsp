@@ -25,6 +25,12 @@
     </script>
 </head>
 <body>
+<%
+    if (session.getAttribute("user")!=null){
+        response.sendRedirect(request.getContextPath()+"/FindListServlet");
+    }
+
+%>
 <div class="container" >
     <center>  <h3 style="text-align: center;">管理员登录</h3></center>
     <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
