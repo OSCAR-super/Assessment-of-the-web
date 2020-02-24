@@ -21,7 +21,7 @@ public class LoginFilter implements Filter {
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request=(HttpServletRequest)servletRequest;
         HttpServletResponse response=(HttpServletResponse)servletResponse;
-        if (!request.getRequestURI().contains("/Login")&&!request.getRequestURI().contains("/homepage")){
+        if (!request.getRequestURI().contains("/homepage")){
             User u=(User) request.getSession().getAttribute("user");
             if (u==null){
                 Cookie[] cookies=request.getCookies();
