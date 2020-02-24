@@ -17,6 +17,11 @@
     <link href="css/xiugai.css" rel="stylesheet">
     <title>修改考核信息</title>
 </head>
+<%
+    if (session.getAttribute("user")==null){
+        response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+    }
+%>
 <body>
 <form action="${pageContext.request.contextPath}/addListServlet" method="post">
     <br><br>

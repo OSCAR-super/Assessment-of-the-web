@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
+
 <html lang="en">
 <script type="text/javascript">
     window.onload=function () {
@@ -43,6 +44,11 @@
     <script src="js/list.js"></script>
     <title>考核任务列表</title>
 </head>
+<%
+    if (session.getAttribute("user")==null){
+        response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+    }
+%>
 <body>
 <a  href="${pageContext.request.contextPath}/FindUserByConditionServlet" id="admin" >管理员信息</a>
 <form action="${pageContext.request.contextPath}/delListSelectedServlet" method="post" id="form">

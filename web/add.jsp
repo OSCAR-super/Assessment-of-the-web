@@ -28,6 +28,11 @@
         }
     </script>
 </head>
+<%
+    if (session.getAttribute("user")==null){
+        response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+    }
+%>
 <body>
 <div class="container">
     <center><h3>添加管理员页面</h3></center>

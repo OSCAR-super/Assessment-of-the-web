@@ -21,7 +21,11 @@
     <script type="text/javascript" src="js/page.js"></script>
     <link href="css/xiugai.css" rel="stylesheet">
 </head>
-
+<%
+    if (session.getAttribute("user")==null){
+        response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+    }
+%>
 <body>
 <form action="${pageContext.request.contextPath}/updateListServlet" method="post">
     <br><br>

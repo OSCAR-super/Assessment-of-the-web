@@ -20,7 +20,11 @@
     <script type="text/javascript" src="js/myJquery.js"></script>
     <script type="text/javascript" src="js/page.js"></script>
 </head>
-
+<%
+    if (session.getAttribute("user")==null){
+        response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+    }
+%>
 <body>
 <form class="form-inline" action="${pageContext.request.contextPath}/FindStudentByConditionServlet" method="post">
     <div class="form-group" style="margin-left: 10%;">

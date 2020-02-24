@@ -25,7 +25,23 @@
             );
         }
     </script>
+    <script>
+        function back(){
+            window.history.go(-1);
+        }
+
+        function jiami(){
+            document.getElementById("password").value = hex_md5(
+                document.getElementById("password").value
+            );
+        }
+    </script>
 </head>
+<%
+    if (session.getAttribute("user")==null){
+        response.sendRedirect(request.getContextPath()+"/homepage.jsp");
+    }
+%>
 <body>
 <div class="container">
     <center><h3>修改管理员</h3></center>
@@ -48,7 +64,7 @@
         <div class="form-group" style="text-align: center">
             <input class="btn" type="submit" onclick="jiami()" value="提交" />
             <input class="btn" type="reset" value="重置" />
-            <input class="btn" type="button" value="返回"/>
+            <input class="btn" type="button" value="返回"onclick="back()"/>
         </div>
     </form>
 </div>
