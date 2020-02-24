@@ -11,13 +11,24 @@ box.addEventListener("drop",function (e){
     e.stopPropagation();
     e.preventDefault();
 
-    $(".input").remove();
+  
 
     box.style.border = "3px dashed #2267ce";
     let files = e.dataTransfer.files;
     let size = files[0].size/1024/1024;
-    console.log(files);
+    console.log(files[0].name);
+
+    let nnn = files[0].name;
+    let index = nnn.lastIndexOf(".");
+    let leixing = nnn.substring(index+1,nnn.length);
+    console.log(leixing);
     
+    if(leixing!="zip")
+    {
+        alert("只能上传zip！");
+        return
+    }
+    $(".input").remove();
     let add = $('<input class="input" type="file" name="file">  <span id="sss"></span>');
     $("#post").append(add);
     $(".input")[0].files = files;
@@ -33,3 +44,18 @@ document.addEventListener("dragover",function(e){
     x.style.border = "3px dashed red";
 },false);
 
+
+
+$(".input").on('change',function(){
+    let file = document.getElementsByClassName("input")[0].files[0].name;
+    console.log(file);
+    let index = file.lastIndexOf(".");
+    let leixing = file.substring(index+1,file.length);
+    console.log(leixing);
+    
+    if(leixing!="zip")
+    {
+        alert("只能上传zip！");
+        $(".input")[0].value="";
+    }
+})

@@ -6,6 +6,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.nio.charset.Charset;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 
 @WebServlet("/viewServlet")
 public class viewServlet extends HttpServlet {
@@ -14,26 +17,36 @@ public class viewServlet extends HttpServlet {
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html; charset=UTF-8");
         String files=request.getParameter("filename");
-        File file=new File("F:\\upload\\"+files);
-        try {
 
-            InputStreamReader isr = new InputStreamReader(new FileInputStream((file)), "UTF-8");
-            BufferedReader br = new BufferedReader(isr);
-            String content;
-            try {
 
-                while((content=br.readLine())!=null){
 
-                    response.getWriter().print(content+"<br>");
+            FileInputStream input = new FileInputStream("F:\\upload\\"+files);
+
+            ZipInputStream zipInputStream = new ZipInputStream(new BufferedInputStream(input), Charset.forName("GBK"));
+            ZipEntry ze = null;
+
+
+
+                while((ze=zipInputStream.getNextEntry())!= null){
+
+                    response.getWriter().print("文件名：" + ze.getName() + " 文件大小：" + ze.getSize() + " bytes"+"<br>");
+
+                    response.getWriter().print("文件内容："+"<br>");
+                    BufferedReader br = new BufferedReader(new InputStreamReader(zipInputStream,Charset.forName("GBK")));
+
+                    String line;
+
+                    while ((line = br.readLine()) != null) {
+                        response.getWriter().print(line+"<br>");
 
 
                 }
-            } catch (IOException e) {
-                e.printStackTrace();
+
             }
-        } catch (FileNotFoundException e1) {
-            e1.printStackTrace();
-        }
+            zipInputStream.closeEntry();
+            input.close();
+
+
 
     }
 

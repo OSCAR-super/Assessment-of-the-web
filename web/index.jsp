@@ -67,10 +67,7 @@
         <label for="exampleInputName3">用户名</label>
         <input type="text" name="username" value="${condition.username[0]}" class="form-control" id="exampleInputName3">
     </div>
-    <div class="form-group">
-        <label for="exampleInputEmail2">密码</label>
-        <input type="text" name="password" value="${condition.password[0]}" class="form-control" id="exampleInputEmail2">
-    </div>
+
 
     <button type="submit" class="btn">查询</button>
 </form>

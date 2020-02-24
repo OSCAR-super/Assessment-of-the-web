@@ -65,7 +65,7 @@ $(function(){
   var sumRows = $table.find('tbody tr').length;  
   var sumPages = Math.ceil(sumRows/pageSize);//总页数  
     
-  var $pager = $('<br><div class="page"></div>');  //新建div，放入a标签,显示底部分页码  
+  var $pager = $('<div class="page"></div>');  //新建div，放入a标签,显示底部分页码
   for(var pageIndex = 0 ; pageIndex<sumPages ; pageIndex++){  
       $('<a href="#" id="pageStyle" onclick="changCss(this)"><span>'+(pageIndex+1)+'</span></a>').bind("click",{"newPage":pageIndex},function(event){  
           currentPage = event.data["newPage"];  

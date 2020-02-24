@@ -26,11 +26,11 @@ CREATE TABLE `kaohe` (
   `time` varchar(50) DEFAULT NULL,
   `neiron` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
 
 /*Data for the table `kaohe` */
 
-insert  into `kaohe`(`id`,`name`,`time`,`neiron`) values (0,'考核1','20200202','cifan342423243'),(1,'1','1','1'),(3,'12','12','123123123\r\n2131231\r\n131323\r\n1312313');
+insert  into `kaohe`(`id`,`name`,`time`,`neiron`) values (0,'考核112','2019-06-11','吃'),(1,'考核2','1','喝'),(2,'考核3','2020','沙'),(4,'考核4','2020-3-12','无'),(5,'1231242431231','2020-02-06','1231241241242');
 
 /*Table structure for table `student` */
 
@@ -53,7 +53,7 @@ CREATE TABLE `student` (
 
 /*Data for the table `student` */
 
-insert  into `student`(`sid`,`sname`,`teacher`,`gai`,`stime`,`kaohename`,`file`) values (1,'1',2,'通过','2020-02-15 18:41:16 下午',0,''),(111,'111',3,'通过','2020-02-15 21:13:21 下午',1,''),(132,'123',0,'通过','2020-02-15 18:46:14 下午',0,'1.rar');
+insert  into `student`(`sid`,`sname`,`teacher`,`gai`,`stime`,`kaohename`,`file`) values (425235235,'242424',1,'审核中','2020-02-24 21:46:27 下午',0,'LYT-master.zip');
 
 /*Table structure for table `user` */
 
@@ -65,11 +65,11 @@ CREATE TABLE `user` (
   `username` varchar(50) DEFAULT NULL,
   `password` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 /*Data for the table `user` */
 
-insert  into `user`(`id`,`name`,`username`,`password`) values (0,'李雨田23343','lyt','123'),(1,'123','lyt1','123'),(2,'1234','lyt2','123'),(3,'12345','lyt3','123');
+insert  into `user`(`id`,`name`,`username`,`password`) values (1,'李雨田','lyt','202cb962ac59075b964b07152d234b70');
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;

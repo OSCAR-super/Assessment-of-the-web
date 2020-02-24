@@ -55,7 +55,7 @@
     </div>
 </form>
 
-<script type="text/javascript" src="js/submit1.js"></script>
+<script type="text/javascript" src="js/submitk.js"></script>
 <script type="text/javascript" src="js/submitjquery.js"></script>
 </body>
 </html>

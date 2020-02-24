@@ -17,20 +17,21 @@
     <link href="css/l.css" rel="stylesheet">
     <script src="js/jquery-2.1.0.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/md5.js"></script>
     <script type="text/javascript">
         function refreshCode() {
             var code=document.getElementById("vcode");
             code.src="${pageContext.request.contextPath}/CheckCodeServlet?time"+new Date().getTime();
         }
+
+        function jiami(){
+            document.getElementById("password").value = hex_md5(
+                document.getElementById("password").value
+            );
+        }
     </script>
 </head>
 <body>
-<%
-    if (session.getAttribute("user")!=null){
-        response.sendRedirect(request.getContextPath()+"/FindListServlet");
-    }
-
-%>
 <div class="container" >
     <center>  <h3 style="text-align: center;">管理员登录</h3></center>
     <form action="${pageContext.request.contextPath}/LoginServlet" method="post">
@@ -52,7 +53,7 @@
         <hr/>
         是否记住密码：<input type="checkbox" name="isAutoLogin" value="true">
         <div class="form-group" style="text-align: center;">
-            <br>    <input class="btn" type="submit" value="登录">
+            <br>    <input class="btn" type="submit"  onclick="jiami()" value="登录">
         </div>
     </form>
     <br>

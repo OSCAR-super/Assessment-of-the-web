@@ -54,7 +54,7 @@ window.onload=function () {
 
 function zj()
 {
-    window.open("zengjia.jsp");
+    window.open("zengjia1.jsp");
 }
 
 function add1()

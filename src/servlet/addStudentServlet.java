@@ -1,10 +1,12 @@
 package servlet;
 
+import Tools.JDBCUtils;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileItemFactory;
 import org.apache.commons.fileupload.FileUploadException;
 import org.apache.commons.fileupload.disk.DiskFileItemFactory;
 import org.apache.commons.fileupload.servlet.ServletFileUpload;
+import org.springframework.jdbc.core.JdbcTemplate;
 import pojo.Students;
 import service.UserService;
 import service.impl.UserServiceImpl;
@@ -16,6 +18,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
 import java.sql.SQLException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.List;
 
@@ -34,6 +39,7 @@ public class addStudentServlet extends HttpServlet {
         request.setCharacterEncoding("utf-8");
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html; charset=UTF-8");
+
         String filename = null;
         int sno=-1;
         String sname=null;
@@ -69,6 +75,7 @@ public class addStudentServlet extends HttpServlet {
                         {
                             System.out.println("其他字段");
                         }
+
                     }else
                     {
                         filename=item.getName();
@@ -92,8 +99,6 @@ public class addStudentServlet extends HttpServlet {
             }
         }
 
-
-        request.setCharacterEncoding("utf-8");
 
 
 

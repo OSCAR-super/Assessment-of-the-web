@@ -15,9 +15,16 @@
     <title>添加用户</title>
     <link href="css/a.css" rel="stylesheet" type="text/css" />
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/md5.js"></script>
     <script>
         function back(){
             window.history.go(-1);
+        }
+
+        function jiami(){
+            document.getElementById("password").value = hex_md5(
+                document.getElementById("password").value
+            );
         }
     </script>
 </head>
@@ -27,11 +34,11 @@
     <form action="${pageContext.request.contextPath}/addUserServlet" method="post">
         <div class="div">
             <label for="name">姓名：</label><br>
-            <input type="text" class="in" id="name" name="name" value="${user.name}" placeholder="请输入用户名">
+            <input type="text" class="in" id="name" name="name" value="${user.name}" placeholder="请输入姓名">
         </div>
         <div class="div">
             <label for="password">密码：</label><br>
-            <input type="text" class="in" id="password" name="password" value="${user.password}" placeholder="请输入用户名">
+            <input type="text" class="in" id="password" name="password"   placeholder="请输入密码">
         </div>
         <div class="div">
             <label for="username">用户名：</label><br>
@@ -39,7 +46,7 @@
         </div>
         <br><br>
         <div class="" style="text-align: center">
-            <input class="btn" type="submit" value="提交" />
+            <input class="btn" type="submit" value="提交" onclick="jiami()" />
             <input class="btn" type="reset" value="重置" />
             <input class="btn" type="button" value="返回" onclick="back()"/>
         </div>

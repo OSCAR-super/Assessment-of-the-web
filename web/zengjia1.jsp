@@ -27,7 +27,7 @@
     <br><br>
     <div class="t">
         <label for="time">截止时间</label>
-        <input type="text" id="time" class="task" name="time" onclick="edit(this,'time')" value=""/>
+        <input type="date" id="time" class="task" name="time" onblur="jiancha()" value="${kaohe.time}">
     </div>
     <br><br>
     <div class="t">
@@ -37,7 +37,25 @@
     <br><br>
     <input type="submit" class="btn" style="margin-left: 45%;" value="提交"/>
     <input type="reset" class="btn" style="margin-left: 25px;" value="重置"/>
+    <script>
+        function jiancha(){
+            let time = document.getElementById("time").value;
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = ('0' + (date.getMonth() + 1)).slice(-2);
+            let day = ('0' + date.getDate()).slice(-2);
+            let nowDate = year + '-' + month + '-' +day;
 
+            let ttt = new Date(time);
+
+            if(ttt<=date)
+            {
+                alert("请选择正确的时间！");
+                document.getElementById("time").value = nowDate;
+            }
+
+        }
+    </script>
 </form>
 </body>
 </html>

@@ -32,7 +32,7 @@
     <br><br>
     <div class="t">
         <label for="time">截止时间</label>
-        <input type="text" id="time" class="task" name="time" onclick="edit(this,'time')" value="${kaohe.time}">
+        <input type="date" id="time" class="task" name="time" onblur="jiancha()" value="${kaohe.time}">
     </div>
     <br><br>
     <div class="t">
@@ -43,16 +43,15 @@
     <input type="submit" class="btn" style="margin-left: 45%;" value="确认修改"/>
     <a class="search" href="${pageContext.request.contextPath}/fServlet?kaohename=${kaohe.id}">进入批改</a>
     <div >
-        <input type="hidden" name="id" value="${kaohe.id}">
+    <input type="hidden" name="id" value="${kaohe.id}">
     </div>
 
 </form>
 <div >
-
+   
 </div>
 
 
 
 </body>
 </html>
-
